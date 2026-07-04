@@ -26,7 +26,7 @@ Result
 <img width="959" height="505" alt="Screenshot 2026-07-03 001351" src="https://github.com/user-attachments/assets/dfbc1ac5-5e19-40ec-a5c4-16c69ec7653d" />
 <img width="959" height="505" alt="Screenshot 2026-07-03 001417" src="https://github.com/user-attachments/assets/e5b7ef42-499e-4711-8b36-fb21b87b7c03" />
 
-Key showing what different symbols mean shown before extracted values are filled and below the extracted value table once values are filled 
+Key showing what different symbols mean shown before extracted values are filled and below the extracted values table once values are filled 
 <img width="959" height="502" alt="Screenshot 2026-07-03 001238" src="https://github.com/user-attachments/assets/ffa9629d-e858-453e-a14c-6bfbb6a80a02" />
 
 ## Main components
