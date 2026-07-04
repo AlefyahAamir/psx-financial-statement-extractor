@@ -13,6 +13,10 @@ This project extracts selected financial statement values from official Pakistan
 - Supports database save into SQL Server.
 - Provides benchmark and manual validation workflows.
 
+  Company Search Section
+  <img width="959" height="508" alt="Screenshot 2026-07-03 001208" src="https://github.com/user-attachments/assets/6ed6884b-b66d-45aa-9b10-0f50829e2b4c" />
+
+
 ## Main components
 
 ```text
