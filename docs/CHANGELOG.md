@@ -25,3 +25,13 @@
 - Removed duplicate limitations documentation and stale self-review summary documentation.
 - Retired old numbered batch runners except the smoke-test convenience wrapper; PowerShell scripts are now the main automation path.
 - Added focused tests for sign handling, two-number plain-text rows, continuation pages, full schema mapping coverage, and layout target-year column selection.
+
+## Security, CI, and layout modularization
+
+- Moved coordinate-aware layout extraction from the worker into `workers/extraction/layout_engine.py`.
+- Kept the worker responsible for command routing, PSX discovery, PDF download/cache, OCR routing, and database save orchestration.
+- Replaced executable raw SQL review generation with a parameterized review template.
+- Confirmed direct database writes use pyodbc parameter binding for INSERT and UPDATE paths.
+- Added a SQL parameterization regression test.
+- Added GitHub Actions CI to compile Python files and run unit tests.
+- Cleaned copy-paste text in the manual validation test-case CSV.

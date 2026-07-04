@@ -8,15 +8,27 @@ The primary pipeline lives in `workers/extraction/`. It is modular and covered b
 
 ## Layout fallback
 
-The layout fallback remains in `workers/psx_worker.py`. This is the risky path for multi-column interim reports because it uses PDF word coordinates to select the target-year/current-period column.
+The coordinate-aware layout fallback lives in `workers/extraction/layout_engine.py`.
 
-A focused test now covers the core layout-column selection rule, but this area should be the next refactor target if the project continues:
+This path is important for multi-column interim reports because it uses PDF word
+coordinates to select the value closest to the target-year/current-period header.
+A focused unit test covers that core column-selection rule.
 
-```text
-move layout_* functions into workers/extraction/layout_engine.py
-add fixtures for real multi-column interim statement rows
-test quarter/half-year/current-vs-comparative selection directly
-```
+Remaining work for this area is to add more real-world layout fixtures for
+quarter/half-year report variants.
+
+## Database save safety
+
+Direct database save uses pyodbc parameter binding in the INSERT and UPDATE
+paths. The SQL file generated during save is now a review-only parameterized
+template with parameter values shown separately, not an executable SQL script
+with extracted values interpolated into the command string.
+
+## CI
+
+The repository includes a GitHub Actions workflow at
+`.github/workflows/ci.yml` that compiles Python files and runs the unit tests on
+push and pull request.
 
 ## Why both exist
 

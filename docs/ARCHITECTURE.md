@@ -14,10 +14,10 @@ The web application provides the user interface and calls the Python worker for 
 - PDF download and caching.
 - Extraction orchestration.
 - OCR fallback orchestration.
-- Layout fallback orchestration.
-- Database save support.
+- Layout fallback orchestration through `workers/extraction/layout_engine.py`.
+- Database save support using parameterized pyodbc execution.
 
-It is not a pure orchestration file yet. Some layout and OCR fallback logic still lives in this worker because that code is tightly coupled to PDF objects and fallback routing. The financial statement row-matching pipeline has been separated into `workers/extraction/`, but the layout engine remains a clearly identified area for future extraction and deeper unit testing.
+It is not a pure orchestration file yet because it still contains report discovery, download/cache handling, save orchestration, and OCR routing. The primary statement row-matching pipeline and the coordinate-aware layout engine now live under `workers/extraction/`.
 
 ## Modular extraction package
 
@@ -32,6 +32,7 @@ field_matching.py
 taxation.py
 arithmetic_sanity.py
 pipeline.py
+layout_engine.py
 ```
 
 This package handles:
