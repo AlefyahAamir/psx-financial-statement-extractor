@@ -1,3 +1,5 @@
+[![CI](https://github.com/AlefyahAamir/psx-financial-statement-extractor/actions/workflows/ci.yml/badge.svg)](https://github.com/AlefyahAamir/psx-financial-statement-extractor/actions/workflows/ci.yml)
+
 # PSX Financial Extractor
 
 This project extracts selected financial statement values from official Pakistan Stock Exchange financial report PDFs and stores the results in SQL Server.
