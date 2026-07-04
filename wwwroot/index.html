@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PSX Financial Extractor</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand-wrap">
+      <div class="brand-mark">PX</div>
+      <div>
+        <div class="brand">PSX Financial Extractor</div>
+        <div class="brand-subtitle">Official PSX PDF financial extraction</div>
+      </div>
+    </div>
+    <nav>
+      <a href="#search">Search</a>
+      <a href="#reportsPanel">Reports</a>
+      <a href="#review">Extracted Values</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="search" class="hero-card client-search-card">
+      <div class="search-panel client-search-panel">
+        <div class="grid search-grid client-search-grid">
+          <div class="field company-field">
+            <label for="companyInput">Company name or symbol</label>
+            <input id="companyInput" autocomplete="off" placeholder="Type PSO, OGDC, Meezan, etc." />
+            <div id="companyDropdown" class="dropdown hidden"></div>
+            <small>Start typing to show matching PSX companies.</small>
+          </div>
+
+          <div class="field">
+            <label for="yearSelect">Financial year</label>
+            <select id="yearSelect"></select>
+          </div>
+        </div>
+
+        <div class="selected-company-card" id="selectedCompanyCard">
+          <div>
+            <span class="label-mini">Selected company</span>
+            <strong id="selectedCompanyText">No company selected</strong>
+          </div>
+          <div>
+            <span class="label-mini">Symbol</span>
+            <strong id="selectedSymbolText">-</strong>
+          </div>
+        </div>
+
+        <input id="symbolInput" type="hidden" />
+        <input id="companyNameInput" type="hidden" />
+
+        <div class="action-row">
+          <button id="findReportsBtn" class="btn primary">Find Reports</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="reportsPanel" class="card">
+      <div class="section-head">
+        <div>
+          <h2>Available reports</h2>
+          <p class="muted">Choose one official PSX PDF to extract.</p>
+        </div>
+        <button id="extractBtn" class="btn primary" disabled>Extract</button>
+      </div>
+      <div id="noReportsBox" class="empty-state hidden"></div>
+      <div class="table-wrap">
+        <table id="reportsTable">
+          <thead>
+            <tr>
+              <th>Select</th>
+              <th>Report Type</th>
+              <th>Period Ended</th>
+              <th>Published</th>
+              <th>Title</th>
+              <th>PDF</th>
+            </tr>
+          </thead>
+          <tbody><tr><td colspan="6" class="muted">No reports loaded yet.</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="review" class="card">
+      <div class="section-head review-head">
+        <div>
+          <h2 id="resultHeading">Extracted values table</h2>
+          <p id="resultSubheading" class="muted">After extraction, company, year and report details will appear here.</p>
+        </div>
+        <div class="review-actions">
+          <button id="saveDbBtn" class="btn success hidden" disabled>Save to Database</button>
+          <div id="saveDbStatus" class="save-status hidden"></div>
+        </div>
+      </div>
+
+      <div id="summaryCards" class="summary-grid hidden"></div>
+      <div id="warningsBox" class="warnings hidden"></div>
+
+      <div class="table-wrap wide">
+        <table id="matrixTable" class="value-table">
+          <thead><tr><th>Field</th></tr></thead>
+          <tbody><tr><td class="muted">No extracted data yet.</td></tr></tbody>
+        </table>
+      </div>
+
+      <div class="legend-card">
+        <h3>Value confidence key</h3>
+        <div class="legend-grid">
+          <div><span class="confidence-dot verified"></span><strong>Verified / Direct</strong><small>Value has direct PDF/OCR row evidence.</small></div>
+          <div><span class="confidence-dot calculated"></span><strong>Calculated</strong><small>Value is formula-based from extracted inputs.</small></div>
+          <div><span class="confidence-triangle review"></span><strong>Needs review</strong><small>Value is visible but should be checked if required.</small></div>
+          <div><span class="confidence-dot missing"></span><strong>Missing</strong><small>No extracted value available.</small></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+workers/.venv/
+.pytest_cache/
+
+# .NET
+bin/
+obj/
+
+# Local/runtime data
+App_Data/downloads/
+App_Data/jobs/
+App_Data/benchmark/
+App_Data/debug/
+
+# Secrets/config
+.env
+*.user
+appsettings.Development.json
+
+# Packages/results
+*.zip
+*.pdf
+
+# Editor
+.vscode/
+.idea/
