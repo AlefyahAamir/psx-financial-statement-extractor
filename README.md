@@ -7,7 +7,7 @@ This project extracts selected financial statement values from official Pakistan
 - Searches PSX-listed companies.
 - Finds official financial report PDFs.
 - Extracts key financial statement fields.
-- Shows evidence and warnings for review.
+- Shows the values with evidence and warnings for review.
 - Supports database save into SQL Server.
 - Provides benchmark and manual validation workflows.
 
